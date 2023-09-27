@@ -636,6 +636,21 @@ export default {
       type: [ Number, String ],
       default: 999,
     },
+
+    /**
+     * New feature: masonry layout.
+     */
+    masonryLayoutColumns: {
+      type: Number,
+      default: 0,
+    },
+    /**
+     * New feature: masonry layout.
+     */
+    masonryLayoutHasSelectAll: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {

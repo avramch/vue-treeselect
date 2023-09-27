@@ -150,6 +150,29 @@
       renderOptionList() {
         const { instance } = this
 
+        if (instance.masonryLayoutColumns > 0) {
+          const columns = []
+          for (let i = 0; i < instance.masonryLayoutColumns; i++) {
+            columns[i] = []
+          }
+          if (instance.masonryLayoutHasSelectAll) {
+            columns[0].push(<div>&nbsp;</div>)
+          }
+          instance.forest.normalizedOptions.forEach((rootNode, idx) => {
+            const columnIdx = (idx + instance.masonryLayoutHasSelectAll) % instance.masonryLayoutColumns
+            if (columns[columnIdx]) {
+              columns[columnIdx].push(<Option node={rootNode} key={rootNode.id} />)
+            }
+          })
+          return (
+            <div class="vue-treeselect__list">
+              {Object.values(columns).map(optionsArr => (
+                <div class="vue-treeselect__list-column">{optionsArr}</div>
+              ))}
+            </div>
+          )
+        }
+
         return (
           <div class="vue-treeselect__list">
             {instance.forest.normalizedOptions.map(rootNode => (

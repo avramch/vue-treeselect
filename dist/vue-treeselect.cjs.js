@@ -510,8 +510,8 @@ var MENU_BUFFER = 40;
 
 
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { defineProperty_default()(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { defineProperty_default()(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 
 
 
@@ -814,6 +814,14 @@ var instanceId = 0;
     zIndex: {
       type: [Number, String],
       default: 999
+    },
+    masonryLayoutColumns: {
+      type: Number,
+      default: 0
+    },
+    masonryLayoutHasSelectAll: {
+      type: Boolean,
+      default: false
     }
   },
   data: function data() {
@@ -2370,8 +2378,8 @@ var SingleValue_component = normalizeComponent(
 if (false) { var SingleValue_api; }
 SingleValue_component.options.__file = "src/components/SingleValue.vue"
 /* harmony default export */ var SingleValue = (SingleValue_component.exports);
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--5!./node_modules/cache-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Delete.vue?vue&type=template&id=364b6320&
-var Deletevue_type_template_id_364b6320_render = function render() {
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--5!./node_modules/cache-loader/dist/cjs.js!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Delete.vue?vue&type=template&id=12b4a02e&
+var Deletevue_type_template_id_12b4a02e_render = function render() {
   var _vm = this,
     _c = _vm._self._c
   return _c(
@@ -2391,11 +2399,11 @@ var Deletevue_type_template_id_364b6320_render = function render() {
     ]
   )
 }
-var Deletevue_type_template_id_364b6320_staticRenderFns = []
-Deletevue_type_template_id_364b6320_render._withStripped = true
+var Deletevue_type_template_id_12b4a02e_staticRenderFns = []
+Deletevue_type_template_id_12b4a02e_render._withStripped = true
 
 
-// CONCATENATED MODULE: ./src/components/icons/Delete.vue?vue&type=template&id=364b6320&
+// CONCATENATED MODULE: ./src/components/icons/Delete.vue?vue&type=template&id=12b4a02e&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Delete.vue?vue&type=script&lang=js&
 /* harmony default export */ var Deletevue_type_script_lang_js_ = ({
@@ -2413,8 +2421,8 @@ Deletevue_type_template_id_364b6320_render._withStripped = true
 
 var Delete_component = normalizeComponent(
   icons_Deletevue_type_script_lang_js_,
-  Deletevue_type_template_id_364b6320_render,
-  Deletevue_type_template_id_364b6320_staticRenderFns,
+  Deletevue_type_template_id_12b4a02e_render,
+  Deletevue_type_template_id_12b4a02e_staticRenderFns,
   false,
   null,
   null,
@@ -2422,9 +2430,6 @@ var Delete_component = normalizeComponent(
   
 )
 
-/* hot reload */
-if (false) { var Delete_api; }
-Delete_component.options.__file = "src/components/icons/Delete.vue"
 /* harmony default export */ var Delete = (Delete_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MultiValueItem.vue?vue&type=script&lang=js&
 
@@ -2812,9 +2817,6 @@ var Tip_component = normalizeComponent(
   
 )
 
-/* hot reload */
-if (false) { var Tip_api; }
-Tip_component.options.__file = "src/components/Tip.vue"
 /* harmony default export */ var Tip = (Tip_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Option.vue?vue&type=script&lang=js&
 
@@ -3092,9 +3094,6 @@ var Option_component = normalizeComponent(
   
 )
 
-/* hot reload */
-if (false) { var Option_api; }
-Option_component.options.__file = "src/components/Option.vue"
 /* harmony default export */ var components_Option = (Option_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Menu.vue?vue&type=script&lang=js&
 
@@ -3214,6 +3213,33 @@ var directionMap = {
     renderOptionList: function renderOptionList() {
       var h = this.$createElement;
       var instance = this.instance;
+      if (instance.masonryLayoutColumns > 0) {
+        var columns = [];
+        for (var i = 0; i < instance.masonryLayoutColumns; i++) {
+          columns[i] = [];
+        }
+        if (instance.masonryLayoutHasSelectAll) {
+          columns[0].push(h("div", ["\xA0"]));
+        }
+        instance.forest.normalizedOptions.forEach(function (rootNode, idx) {
+          var columnIdx = (idx + instance.masonryLayoutHasSelectAll) % instance.masonryLayoutColumns;
+          if (columns[columnIdx]) {
+            columns[columnIdx].push(h(components_Option, {
+              attrs: {
+                node: rootNode
+              },
+              key: rootNode.id
+            }));
+          }
+        });
+        return h("div", {
+          "class": "vue-treeselect__list"
+        }, [Object.values(columns).map(function (optionsArr) {
+          return h("div", {
+            "class": "vue-treeselect__list-column"
+          }, [optionsArr]);
+        })]);
+      }
       return h("div", {
         "class": "vue-treeselect__list"
       }, [instance.forest.normalizedOptions.map(function (rootNode) {
@@ -3406,8 +3432,8 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/MenuPortal.vue?vue&type=script&lang=js&
 
-function MenuPortalvue_type_script_lang_js_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function MenuPortalvue_type_script_lang_js_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? MenuPortalvue_type_script_lang_js_ownKeys(Object(source), !0).forEach(function (key) { defineProperty_default()(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : MenuPortalvue_type_script_lang_js_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function MenuPortalvue_type_script_lang_js_ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function MenuPortalvue_type_script_lang_js_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? MenuPortalvue_type_script_lang_js_ownKeys(Object(t), !0).forEach(function (r) { defineProperty_default()(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : MenuPortalvue_type_script_lang_js_ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 
 
 
