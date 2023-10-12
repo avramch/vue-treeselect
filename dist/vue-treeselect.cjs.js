@@ -822,6 +822,10 @@ var instanceId = 0;
     masonryLayoutHasSelectAll: {
       type: Boolean,
       default: false
+    },
+    portalCssClass: {
+      type: String,
+      default: ''
     }
   },
   data: function data() {
@@ -1997,9 +2001,6 @@ var component = normalizeComponent(
   
 )
 
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "src/components/HiddenFields.vue"
 /* harmony default export */ var HiddenFields = (component.exports);
 // EXTERNAL MODULE: external "babel-helper-vue-jsx-merge-props"
 var external_babel_helper_vue_jsx_merge_props_ = __webpack_require__(13);
@@ -2280,7 +2281,7 @@ var Input_component = normalizeComponent(
 )
 
 /* hot reload */
-if (false) { var Input_api; }
+if (false) { var api; }
 Input_component.options.__file = "src/components/Input.vue"
 /* harmony default export */ var Input = (Input_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Placeholder.vue?vue&type=script&lang=js&
@@ -3528,7 +3529,7 @@ var PortalTarget = {
   render: function render() {
     var h = arguments[0];
     var instance = this.instance;
-    var portalTargetClass = ['vue-treeselect__portal-target', instance.wrapperClass];
+    var portalTargetClass = ['vue-treeselect__portal-target', instance.wrapperClass, instance.portalCssClass];
     var portalTargetStyle = {
       zIndex: instance.zIndex
     };

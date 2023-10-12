@@ -651,6 +651,13 @@ export default {
       type: Boolean,
       default: false,
     },
+    /**
+     * New feature: custom portal CSS class.
+     */
+    portalCssClass: {
+      type: String,
+      default: '',
+    },
   },
 
   data() {

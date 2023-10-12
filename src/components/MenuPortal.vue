@@ -115,7 +115,7 @@
 
     render() {
       const { instance } = this
-      const portalTargetClass = [ 'vue-treeselect__portal-target', instance.wrapperClass ]
+      const portalTargetClass = [ 'vue-treeselect__portal-target', instance.wrapperClass, instance.portalCssClass ]
       const portalTargetStyle = { zIndex: instance.zIndex }
 
       return (
