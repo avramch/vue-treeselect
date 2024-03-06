@@ -37,7 +37,7 @@
     "easings-css": "^1.0.0",
     "fuzzysearch": "^1.0.3",
     "is-promise": "^2.1.0",
-    "lodash": "^4.0.0",
+    "lodash": "^4.17.21",
     "material-colors": "^1.2.6",
     "watch-size": "^2.0.0"
   },
