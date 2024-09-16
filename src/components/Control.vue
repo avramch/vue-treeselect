@@ -62,7 +62,11 @@
         if (!this.shouldShowX) return null
 
         return (
-          <div class="vue-treeselect__x-container" title={title} onMousedown={this.handleMouseDownOnX}>
+          <div
+            class="vue-treeselect__x-container"
+            title={title} onMousedown={this.handleMouseDownOnX}
+            data-test-id="button:input_clear_all"
+          >
             <DeleteIcon class="vue-treeselect__x" />
           </div>
         )
