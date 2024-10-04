@@ -1179,14 +1179,14 @@ var instanceId = 0;
       });
     },
     traverseAllNodesByIndex: function traverseAllNodesByIndex(callback) {
-      var walk = function walk(parentNode) {
+      var _walk = function walk(parentNode) {
         parentNode.children.forEach(function (child) {
           if (callback(child) !== false && child.isBranch) {
-            walk(child);
+            _walk(child);
           }
         });
       };
-      walk({
+      _walk({
         children: this.forest.normalizedOptions
       });
     },
@@ -2677,7 +2677,8 @@ Arrow_component.options.__file = "src/components/icons/Arrow.vue"
       return h("div", {
         "class": "vue-treeselect__x-container",
         attrs: {
-          title: title
+          title: title,
+          "data-test-id": "button:input_clear_all"
         },
         on: {
           "mousedown": this.handleMouseDownOnX
